@@ -1,1 +1,13 @@
-<app-main></app-main>
+<div class="container mt-5 d-flex align-items-start">
+  <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <button [routerLinkActive]="'active'" [routerLink]="['/forms']" class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-controls="v-pills-home">Forms</button>
+    <button [routerLinkActive]="'active'" [routerLink]="['/http-client']" class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-controls="v-pills-profile">Http Client</button>
+    <button [routerLinkActive]="'active'" [routerLink]="['/set-get']" class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-controls="v-pills-messages">SET GET</button>
+    <button [routerLinkActive]="'active'" [routerLink]="['/output-input']" class="nav-link" data-bs-toggle="pill" type="button" role="tab" aria-controls="v-pills-settings">Input Output</button>
+  </div>
+  <div class="col">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+

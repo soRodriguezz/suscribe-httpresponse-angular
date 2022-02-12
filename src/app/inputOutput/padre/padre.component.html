@@ -1,0 +1,18 @@
+
+<h1>Home Component</h1>
+<hr>
+
+<h3>{{ nombrePadre }}</h3>
+
+<button class="btn btn-primary"
+    (click)="cambiarNombrePadre()">
+    Cambiar Nombre
+</button>
+
+<hr>
+
+<app-hijo 
+    [nombreExtrano]="nombrePadre" 
+    (cambioNombreHijo)="hijoCambioNombre($event)"
+>
+</app-hijo>

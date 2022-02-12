@@ -1,19 +1,17 @@
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
-
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
+  selector: 'app-http-client',
+  templateUrl: './http-client.component.html',
   styles: [
   ]
 })
-export class MainComponent implements OnInit {
-
+export class HttpClientComponent implements OnInit {
+  public datos$: any;
   constructor(
     private apiService: ApiService
   ) { }
-
   ngOnInit(): void {
     this.apiService.getDatos().subscribe({
       next: (data: HttpResponse<any>) => {
@@ -23,6 +21,7 @@ export class MainComponent implements OnInit {
         console.log(data.status);
         console.log(data.statusText);
         console.log(data.url);
+        this.datos$ = data.body.data;
       },
       error: (err: HttpErrorResponse) => {
         console.log(err);
@@ -36,5 +35,4 @@ export class MainComponent implements OnInit {
       }
     });
   }
-
 }
